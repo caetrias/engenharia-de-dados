@@ -1,8 +1,4 @@
-# =============================================================================
-# MÓDULO lake — os seis recursos da stack, movidos da raiz SEM alterações.
-# Mesmos nomes, mesmas propriedades. Só o lugar no código mudou.
-# =============================================================================
-
+# os seis recursos da stack, movidos da raiz sem alterar nome/propriedade
 resource "aws_s3_bucket" "lake" {
   bucket        = "eda-a12-${var.sufixo}-lake"
   force_destroy = true

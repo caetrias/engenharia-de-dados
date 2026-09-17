@@ -1,10 +1,4 @@
-# =============================================================================
-# REFATORADO — a stack agora vive em modules/lake/. Aqui na raiz só chamamos
-# o módulo, passando os mesmos parâmetros que antes iam direto nos recursos.
-# Os seis recursos NÃO mudaram de nome nem de propriedade — só de endereço,
-# movidos com `terraform state mv` (Passo 5 do enunciado).
-# =============================================================================
-
+# stack movida pra modules/lake, sem mudar nome/propriedade dos recursos
 module "lake" {
   source     = "./modules/lake"
   sufixo     = var.sufixo

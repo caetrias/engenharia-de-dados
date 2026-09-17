@@ -12,15 +12,11 @@ Antes da movimentação, o plan mostrava 6 to add, 0 to change, 6 to destroy. Is
 
 ## DECISÃO 03: workspace e pasta
 
-Criamos o workspace dev para atender à separação de ambientes no Terraform. A infraestrutura que já estava criada continuou no workspace default. O workspace dev ficou vazio e poderá ser usado para um ambiente separado no futuro.
-
-Não movemos a infraestrutura existente para dev porque cada workspace possui seu próprio estado. Se fizéssemos isso sem migrar o estado corretamente, o Terraform não encontraria os recursos existentes e tentaria criá-los novamente. A pasta organiza os arquivos do projeto, enquanto o workspace separa os estados das diferentes instâncias da infraestrutura.
+Criamos o workspace dev para atender à separação de ambientes no Terraform. A infraestrutura que já estava criada continuou no workspace default. O workspace dev ficou vazio e poderá ser usado para um ambiente separado no futuro. Não movemos a infraestrutura existente para dev porque cada workspace possui seu próprio estado. Se fizéssemos isso sem migrar o estado corretamente, o Terraform não encontraria os recursos existentes e tentaria criá-los novamente. A pasta organiza os arquivos do projeto, enquanto o workspace separa os estados das diferentes instâncias da infraestrutura.
 
 ## DECISÃO 04: o que o plan limpo mostra
 
-O resultado No changes mostra que a configuração atual está de acordo com o estado armazenado no backend. No nosso caso, ele confirmou que a mudança para o módulo e a migração do estado não criaram, alteraram ou destruíram recursos.
-
-Esse resultado não garante que não exista drift na infraestrutura. Por exemplo, uma alteração feita diretamente na AWS pode não estar representada no código. Portanto, o plan limpo confirma a situação encontrada pelo Terraform naquele momento, mas não substitui a verificação da infraestrutura e dos dados na AWS.
+O resultado No changes mostra que a configuração atual está de acordo com o estado armazenado no backend. No nosso caso, ele confirmou que a mudança para o módulo e a migração do estado não criaram, alteraram ou destruíram recursos. Esse resultado não garante que não exista drift na infraestrutura. Por exemplo, uma alteração feita diretamente na AWS pode não estar representada no código. Portanto, o plan limpo confirma a situação encontrada pelo Terraform naquele momento, mas não substitui a verificação da infraestrutura e dos dados na AWS.
 
 ## DECISÃO 05: ordem das operações
 

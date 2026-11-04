@@ -1,0 +1,8 @@
+# Terraform: estado, cache e valores locais de cada grupo
+**/.terraform/
+*.tfstate
+*.tfstate.*
+**/terraform.tfvars
+**/backend.hcl
+# evidências locais das execuções
+**/evidencias/

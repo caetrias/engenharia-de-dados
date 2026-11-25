@@ -6,3 +6,4 @@
 **/backend.hcl
 # evidências locais das execuções
 **/evidencias/
+.DS_Store
